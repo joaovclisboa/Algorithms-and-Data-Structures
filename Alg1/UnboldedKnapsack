@@ -1,0 +1,41 @@
+#include <iostream>
+#include <vector>
+#include <climits>
+#include <algorithm>
+
+
+
+
+std::vector<std::vector<long>> valores;
+std::vector<std::vector<bool>> valores_b;
+//k é o dinheiro restante e i é o indice da moeda atual
+long UnboldedKnapsack(std::vector<long> &moedas, long k, long i){
+    std::cout << "k: " << k << "i: " << i << std::endl; 
+    if (valores_b[k][i]){
+        return 9999;
+    }
+    valores_b[k][i] = true;
+    if (valores[k][i] != -1){
+        return valores[k][i];
+    }
+    if (moedas[i] == k){
+        return 1;
+    }
+    if (moedas[i] < k){
+        return(std::min(UnboldedKnapsack(moedas, k-moedas[i], ((i+1)%(moedas.size())))+1, UnboldedKnapsack(moedas, k, (i+1)%(moedas.size()))));
+    }
+    return UnboldedKnapsack(moedas, k, (i+1)%(moedas.size()));
+}
+
+int main(){
+    //k é o numero de moedas, n é o valor alvo.
+    long n, k;
+    std::cin >> n >> k;
+    std::vector<long> moedas(k);
+    for(int i = 0; i < k; i++){
+        std::cin >> moedas[i];
+    }
+    valores.resize(n+1, std::vector<long>(k+1, -1));
+    valores_b.resize(n+1, std::vector<bool> (k+1, 0));
+    std::cout << UnboldedKnapsack(moedas, n, 0);
+}
