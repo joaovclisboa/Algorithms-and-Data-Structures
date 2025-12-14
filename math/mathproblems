@@ -1,0 +1,9 @@
+problem 1: "Toda pessoa viva já apertou a mão de um certo número de outras pessoas. Prove que a contagem do número de pessoas que apertaram as mãos um número ímpar de vezes deve resultar em um número par.
+solution: usando a propriedade dos grafos que a soma de todas os graus é 2x o numero de arestas podemos provar isso.
+Fonte: The USSR Olympiad Problem Book, Problema 1
+----
+problem 2: Prove que se um número inteiro n é relativamente primo a 10, a 101ª potência de n termina com os mesmos três dígitos que n. (Ex: 1233^101 termina em 233).
+solution: utilizando teorema de euler e o teorema chines do resto.
+Fonte: the USSR olympiad problem book
+----
+
