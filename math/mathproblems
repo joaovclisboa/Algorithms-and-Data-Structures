@@ -6,4 +6,8 @@ problem 2: Prove que se um número inteiro n é relativamente primo a 10, a 101�
 solution: utilizando teorema de euler e o teorema chines do resto.
 Fonte: the USSR olympiad problem book
 ----
+Enunciado: Encontre todos os pares de inteiros positivos (x,y) que satisfazem a equação x^y=y^x.
+Solução: Aplicamos a função log em ambos os lados, então analisamos a função usando a derivada.
+Fonte: The USSR olympiad problem book
+-------
 
